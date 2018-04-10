@@ -1,51 +1,15 @@
 var friends = [{
-    "name": "Ahmed",
-    "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    "scores": [
-        5,
-        1,
-        4,
-        4,
-        5,
-        1,
-        2,
-        5,
-        4,
-        1
-    ]
-},
-    {
-        "name": "Ahmed",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "scores": [
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
-            2,
-            5,
-            4,
-            1
-        ]
-    },
-    {
-        "name": "Ahmed",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "scores": [
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
-            2,
-            5,
-            4,
-            1
-        ]
-    }]
-
+    "name": "Friend1",
+    "photo": "http://www.mens-hairstylists.com/wp-content/uploads/2015/10/stylish-haircuts-for-men.jpg",
+    "scores": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+}, {
+    "name": "Friend2",
+    "photo": "http://science-all.com/images/wallpapers/girl-pictures/girl-pictures-23.jpg",
+    "scores": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+}, {
+    "name": "Friend3",
+    "photo": "http://images.zap2it.com/assets/p9257057_n160758_cc_v4_aa/guys-with-kids.jpg",
+    "scores": [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+}];
 
 module.exports = friends;

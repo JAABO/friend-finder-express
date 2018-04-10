@@ -48,31 +48,36 @@ var json = {
 };
 
 var survey = new Survey.Model(json);
-survey.render("surveyElement")
 
-// survey.onComplete.add(function (result) {
-//         var surveyResult = {
-//             'name': $('#name').val().trim(),
-//             'photo': $('#photo').val().trim(),
-//             'scores': [result.data.Quality.id1, result.data.Quality.id2, result.data.Quality.id3, result.data.Quality.id4]
-// // result.data.Quality.id1, result.data.Quality.id1, result.data.Quality.id1, result.data.Quality.id1,]
-//         };
-//         //grab current URL for post method
-//         var currentURL = window.location.origin;
-//         //ajax send info to api route and await response
-//         // function success(data) {
-//         //     //build info into modal, use html to replace previous friend
-//         //     $('#surveyElement').html('<h3>Meet your new friend!</h3>' +
-//         //         '<h3> ' + data.name + '</h3>' +
-//         //         '<img src="' + data.photo + '" width=300px>');
+$("#surveyContainer").SurveyWindow({
+    model: survey,
+    onComplete: sendDataToServer
+});
+survey.render()
 
-//         // }
-//         $.ajax({
-//             type: "POST",
-//             url: currentURL + "/api/friends",
-//             data: surveyResult
-//         });
-//         // console.log(result.data.Quality.id1)
-//         // document.querySelector('#surveyResult').innerHTML = "result: " + JSON.stringify(result.data);
-//     });
+survey.onComplete.add(function (result) {
+        var surveyResult = {
+            'name': $('#name').val().trim(),
+            'photo': $('#photo').val().trim(),
+            'scores': [result.data.Quality.id1, result.data.Quality.id2, result.data.Quality.id3, result.data.Quality.id4]
+
+        };
+        //grab current URL for post method
+        var currentURL = window.location.origin;
+        // ajax send info to api route and await response
+        function success(data) {
+            //build info into modal, use html to replace previous friend
+            $('#surveyElement').html('<h3>Meet your new friend!</h3>' +
+                '<h3> ' + data.name + '</h3>' +
+                '<img src="' + data.photo + '" width=300px>');
+
+        }
+        $.ajax({
+            type: "POST",
+            url: currentURL + "/api/friends",
+            data: surveyResult
+        });
+        console.log(result.data.Quality.id1)
+        document.querySelector('#surveyResult').innerHTML = "result: " + JSON.stringify(result.data);
+    });
 

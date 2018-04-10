@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 
 // this sets up static files in express
-app.use(express.static(path.join(__dirname, 'app/public')));
+app.use(express.static(path.join(__dirname, '/app/public')));
 
-require('./app/routing/api-routes.js')(app);
-require('./app/routing/html-routes.js')(app);
+require('./app/routing/apiRoutes.js')(app);
+require('./app/routing/htmlRoutes.js')(app);
 
 
 var PORT = process.env.PORT || 3000;
